@@ -16,4 +16,10 @@
     <string name="empty_password_validation">Password is required</string>
     <string name="password_validation">\"Password can\'t be less than 6 digit\"</string>
     <string name="select_image_validation">Please select image first</string>
+    <string name="person_name">Ahmed Agrama</string>
+    <string name="person_job">Designer,UI/UX</string>
+    <string name="bio">Bio</string>
+    <string name="bio_example">Lorem ipsum dolor sit amet, consectetur adipiscing elit,cididunt ut labore et dolore magna aliqua.</string>
+    <string name="select_your_message">Select Your Message</string>
+    <string name="message_me">Message Me</string>
 </resources>

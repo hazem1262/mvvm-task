@@ -17,7 +17,6 @@ import com.example.mvvmstarterproject.base.BaseFragment
 import com.opensooq.supernova.gligar.GligarPicker
 import kotlinx.android.synthetic.main.sign_up_fragment.*
 
-
 class SignUpFragment : BaseFragment<SignUpViewModel>() {
 
     override fun onCreateView(
