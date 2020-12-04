@@ -18,6 +18,7 @@ package com.example.mvvmstarterproject.di.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.mvvmstarterproject.ui.HomeViewModel
 import com.example.mvvmstarterproject.ui.sendMessage.SendMessageViewModel
 import com.example.mvvmstarterproject.ui.signup.SignUpViewModel
 import dagger.Binds
@@ -37,6 +38,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(SignUpViewModel::class)
     abstract fun bindSignUpViewModel(mainViewModel: SignUpViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(HomeViewModel::class)
+    abstract fun bindHomeViewModel(homeViewModel: HomeViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

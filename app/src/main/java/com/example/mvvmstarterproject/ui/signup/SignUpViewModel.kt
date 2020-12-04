@@ -1,7 +1,8 @@
 package com.example.mvvmstarterproject.ui.signup
 
-import androidx.lifecycle.ViewModel
+import com.example.mvvmstarterproject.base.BaseViewModel
+import javax.inject.Inject
 
-class SignUpViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+class SignUpViewModel @Inject constructor(): BaseViewModel() {
+    var selectedImagePath:String = ""
 }

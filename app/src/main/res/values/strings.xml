@@ -5,4 +5,9 @@
     <string name="success">Success</string>
     <string name="welcome_message">Welcome To MVVM Task</string>
     <string name="sign_up">Sign up</string>
+    <string name="sign_up_header">Sign up!</string>
+    <string name="sign_up_subHeader">create an account to get start</string>
+    <string name="full_name">Full name</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
 </resources>

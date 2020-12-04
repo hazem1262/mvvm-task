@@ -6,4 +6,6 @@
     <color name="white">#FFF</color>
     <color name="redOrange">#ff3b30</color>
     <color name="limeade">#4A9D00</color>
+    <color name="black">#000000</color>
+    <color name="image_background">#EEEEEE</color>
 </resources>

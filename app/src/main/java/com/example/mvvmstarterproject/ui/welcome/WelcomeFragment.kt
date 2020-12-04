@@ -18,14 +18,14 @@ class WelcomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_welcome, container, false)
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        handleSignUpButton()
+    }
+
     private fun handleSignUpButton() {
         signUpButton.setOnClickListener {
             findNavController().navigate(R.id.action_welcomeFragment_to_signUpFragment)
         }
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        handleSignUpButton()
     }
 }
