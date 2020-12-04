@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/backButton"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="10dp"
@@ -121,9 +121,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/select_your_message"/>
-        
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/messagesTypes"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            tools:listitem="@layout/message_row_item"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+             />
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/signUpBtn"
+            android:id="@+id/messageMeBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
@@ -138,6 +147,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

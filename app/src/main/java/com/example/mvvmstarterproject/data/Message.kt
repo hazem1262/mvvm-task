@@ -1,4 +1,9 @@
 package com.example.mvvmstarterproject.data
 
-class Message {
-}
+data class Message(
+    val id:Int,
+    val header:String,
+    val subHeader:String,
+    val price:Int,
+    var isSelected:Boolean = false
+)
