@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     ext.lifecycle_version = "2.2.0"
     ext.daggerVersion     = "2.25.2"
     ext.materialVersion   = "1.1.0"
