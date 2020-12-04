@@ -16,11 +16,10 @@
 
 package com.example.mvvmstarterproject.di.viewmodels
 
-
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.mvvmstarterproject.test.MainViewModel
-import com.example.mvvmstarterproject.test.TestViewModelA
+import com.example.mvvmstarterproject.ui.sendMessage.SendMessageViewModel
+import com.example.mvvmstarterproject.ui.signup.SignUpViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -31,13 +30,13 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(MainViewModel::class)
-    abstract fun bindMainViewModel(mainViewModel: MainViewModel): ViewModel
+    @ViewModelKey(SendMessageViewModel::class)
+    abstract fun bindSendMessageViewModel(mainViewModel: SendMessageViewModel): ViewModel
 
     @Binds
     @IntoMap
-    @ViewModelKey(TestViewModelA::class)
-    abstract fun bindTestFragmentAViewModel(mainViewModel: TestViewModelA): ViewModel
+    @ViewModelKey(SignUpViewModel::class)
+    abstract fun bindSignUpViewModel(mainViewModel: SignUpViewModel): ViewModel
 
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

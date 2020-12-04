@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">mvvm Task</string>
+    <string name="app_name">MVVM Task</string>
     <string name="error_no_internet_connection">No Internet Connection</string>
     <string name="error">Error</string>
     <string name="success">Success</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_message">Welcome To MVVM Task</string>
+    <string name="sign_up">Sign up</string>
 </resources>
