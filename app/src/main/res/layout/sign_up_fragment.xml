@@ -73,6 +73,7 @@
         app:layout_constraintStart_toEndOf="@+id/profile_image"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameField"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textPersonName"
@@ -92,6 +93,7 @@
         app:layout_constraintStart_toEndOf="@+id/leftGuideline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" >
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailField"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textEmailAddress"
@@ -114,6 +116,7 @@
         app:layout_constraintStart_toEndOf="@+id/leftGuideline"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordField"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="textPassword"
@@ -121,7 +124,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/signUpButton"
+        android:id="@+id/signUpBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
