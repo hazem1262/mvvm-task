@@ -21,7 +21,7 @@ class MessagesAdapter: ListAdapter<Message, RecyclerView.ViewHolder>(diffCallBac
             override fun areContentsTheSame(
                 oldItem: Message,
                 newItem: Message
-            ): Boolean = oldItem.id == newItem.id
+            ): Boolean = oldItem.id == newItem.id && oldItem.isSelected == newItem.isSelected
 
         }
     }
@@ -37,12 +37,16 @@ class MessagesAdapter: ListAdapter<Message, RecyclerView.ViewHolder>(diffCallBac
         (holder as MessageViewHolder).bind(currentList[position])
     }
 
+    override fun submitList(list: List<Message>?) {
+        super.submitList(list?.let { ArrayList(it) })
+    }
+
     inner class MessageViewHolder(private var view: View):
         RecyclerView.ViewHolder(view){
         fun bind(item:Message){
             view.messageHeader.text = item.header
             view.messageSubHeader.text = item.subHeader
-            view.messagePrice.text = "${item.price} $"
+            view.messagePrice.text = "Message Id: ${item.id}"
             view.message_radio_button.isChecked = item.isSelected
             view.message_radio_button.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked){
@@ -50,9 +54,12 @@ class MessagesAdapter: ListAdapter<Message, RecyclerView.ViewHolder>(diffCallBac
                     currentList.forEach {
                         if (it?.id != item.id){
                             it.isSelected = false
+                            notifyItemChanged(currentList.indexOf(it))
                         }
                     }
-                    notifyDataSetChanged()
+                    view.post {
+                        submitList(currentList)
+                    }
                 }
             }
         }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.mvvmstarterproject.R
 import com.example.mvvmstarterproject.base.BaseFragment
@@ -43,9 +44,11 @@ class SendMessageFragment : BaseFragment<SendMessageViewModel>() {
     }
 
     private fun setUpMessagesAdapter() {
-        val messagesOptions = viewModel.getMessagesOptions()
+        viewModel.getMessages()
         messagesTypes.adapter = messagesAdapter
-        messagesAdapter.submitList(messagesOptions)
+        viewModel.messagesLiveData.observe(viewLifecycleOwner, Observer {
+            messagesAdapter.submitList(it)
+        })
     }
 
 }

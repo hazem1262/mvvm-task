@@ -1,11 +1,10 @@
-package com.example.mvvmstarterproject.test
-
+package com.example.mvvmstarterproject.data
 
 import retrofit2.Response
 import retrofit2.http.GET
 
-interface UserService {
+interface MessagesService {
 
-    @GET("users")
-    suspend fun getListOfUsers(): Response<List<User>>
+    @GET("posts")
+    suspend fun getListOfMessages(): Response<List<Message>>
 }

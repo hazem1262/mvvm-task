@@ -1,31 +1,20 @@
 package com.example.mvvmstarterproject.ui.sendMessage
 
+import androidx.lifecycle.MutableLiveData
 import com.example.mvvmstarterproject.base.BaseViewModel
 import com.example.mvvmstarterproject.data.Message
+import com.example.mvvmstarterproject.data.MessagesRepository
 import javax.inject.Inject
 
-class SendMessageViewModel @Inject constructor(): BaseViewModel() {
-    fun getMessagesOptions(): List<Message> {
-        return arrayListOf(
-            Message(
-                id = 1,
-                header = "Question",
-                subHeader = "Message with a reply",
-                price = 2
-            ),
-            Message(
-                id = 2,
-                header = "Question",
-                subHeader = "Message only",
-                price = 1
-            ),
-            Message(
-                id = 3,
-                header = "Question",
-                subHeader = "Message with a reply with order",
-                price = 3
-            )
-        )
-    }
+class SendMessageViewModel @Inject constructor(private val messagesRepository: MessagesRepository): BaseViewModel() {
 
+    val messagesLiveData: MutableLiveData<List<Message>> = MutableLiveData()
+
+    fun getMessages(){
+        wrapBlockingOperation {
+            handleResult(messagesRepository.getListOfUsers()){
+                messagesLiveData.postValue(it.data)
+            }
+        }
+    }
 }
